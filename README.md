@@ -1,0 +1,2 @@
+# Artificial_Intelligence_CourseWork_CS4811
+Assignments of CS4811
