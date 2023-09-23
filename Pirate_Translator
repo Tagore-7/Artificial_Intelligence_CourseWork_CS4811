@@ -1,0 +1,158 @@
+import random
+
+pirate_dictionary = {
+    "hello": "ahoy",
+    "how are you": "how be ye",
+    "hello": "ahoy",
+    "hi": "yo-ho-ho",
+    "my": "me",
+    "friend": "bucko",
+    "sir": "matey",
+    "miss": "proud beauty",
+    "stranger": "scurvy dog",
+    "officer": "foul blaggart",
+    "where": "whar",
+    "is": "be",
+    "are": "be",
+    "am": "be",
+    "ahhh": "blimey",
+    "the": "th'",
+    "you": "ye",
+    "old": "barnacle covered",
+    "happy": "grog-filled",
+    "nearby": "broadside",
+    "bathroom": "head",
+    "kitchen": "galley",
+    "pub": "fleabag inn",
+    "stop": "avast",
+    "yes": "aye",
+    "no": "nay",
+    "yay": "yo-ho-ho",
+    "money": "doubloons",
+    "treasure": "booty",
+    "strong": "heave-ho",
+    "take": "pillage",
+    "drink": "grog",
+    "idiot": "scallywag",
+    "sea": "briney deep",
+    "vote": "mutiny",
+    "song": "shanty",
+    "drunk": "three sheets to the wind",
+    "lol": "yo ho ho",
+    "talk": "parley",
+    "fail": "scupper",
+    "quickly": "smartly",
+    "captain": "cap'n",
+    "meeting": "parley with rum and cap'n",
+    'Cheat': 'Hornswaggle',
+    'Beat': 'Flogg',
+    'Toilet': 'Head',
+    'Friends': 'Hearties',
+    'Stop':'Heave To',
+    "Reckless or loud person who drinks excessively": "Carouser",
+    "A special kind of whip that has 9 strands": "Cat O’Nine Tails",
+    "Song sung together by sailors or pirates in unison, while they work": "Chantey",
+    "A vessel that is being pursued": "Chase",
+    "The main cannon at the bow of a ship": "Chase Gun",
+    "Strong, alcoholic drink, like a shot": "Clap of Thunder",
+    "An order to kill a man by cutting across his chest from the shoulders to stomach.": "Cleave Him to the Brisket",
+    "Fast-moving boat or ship": "Clipper",
+    "The treasure chest": "Coffer",
+    "Smaller war ship": "Cog",
+    "Pirates from the Mediterranean": "Corsair",
+    "Term for spending the night with a prostitute": "Crack Jenny’s Teacup",
+    "A small lookout platform near the mast to see long distances": "Crow’s Nest",
+    "A thick, heavy and rather short sword blade for pirates": "Cutlass",
+    "A mystical fable about an evil spirit from the bottom of the ocean that draws pirates or sailors down to their death": "Davy Jones’ Locker",
+    "An expression meaning no survivors left behind": "Dead Men Tell No Tales",
+    "Types of Spanish gold coins pirates find": "Doubloons",
+    "Flag flown at the front of ship to show nationality": "Jack",
+    "The hangman. “Dance with Jack Ketch” means to hang": "Jack Ketch",
+    "A rope ladder used to climb aboard a boat": "Jacob’s Ladder",
+    "Black pirate flag with white skull and crossbones": "Jolly Roger",
+    "Painful punishment whereby the pirates drag a person side-to-side under the pirate ship and they get cut up by the planks and barnacles from the bottom of the ship": "Keelhaul",
+    "Small, stone anchor with a wooden frame": "Killick",
+    "A kid or young person": "Lad, lass, lassie",
+    "An inexperienced or clumsy person who doesn’t have any sailing skills": "Landlubber",
+    "Government-issued letters allowing privateers the right to piracy of another ship during wartime": "Letters of Marque",
+    "The pirate who keeps watch for land or oncoming ships": "Lookout",
+    "Stolen money or belongings": "Loot",
+    "A pirate ship that is decked out and prepared for battle": "Man-O-War",
+    "Leave someone stranded on a deserted island with no supplies, which was a common punishment for any crew members who disrespected or dishonored the Captain": "Maroon",
+    "To be abandoned with no food, drink, or possessions": "Marooned",
+    "My": "Me",
+    "The 3rd mast from the ship’s bow of bigger ships": "Mizzen",
+    "When crew gang up against the Captain of the ship or other authority": "Mutiny",
+    "The ship’s crew received no wages; however they got a part of the loot or treasure": "No Prey, No Pay",
+    "Experienced pirate or sailor": "Old Salt",
+    "Spanish coins in pirate treasures": "Pieces of eight",
+    "Rob, ransack or plunder": "Pillage",
+    "Robbery performed at sea, often to another ship": "Piracy",
+    "Take booty or burglarize": "Plunder",
+    "(Not the toilet!) This is a part of the ship above the Captain’s headquarters at the farthest point back": "Poop deck",
+    "Government-appointed pirates": "Privateer",
+    "British Flag": "Red Ensign",
+    "Pirate’s favorite alcoholic beverage": "Rum",
+    "Play a joke or a trick on someone": "Run a Rig",
+    "Warning shot given to another boat’s Captain": "Run a Shot Across the Bow",
+    "A warning that another ship is in view": "Sail, Ho!",
+    "A question asking, “Do you get it?” or “Do you understand?”": "Savvy?",
+    "A kidding type of word that a superior pirate might call one of the rookie pirates": "Scallywag",
+    "Pirate known as the worst kind": "Scourge of the 7 Seas",
+    "The pirate is calling you an insulting name": "Scurvy Dog",
+    "Sink a ship": "Scuttle",
+    "A veteran sailor or old pirate": "Seadog",
+    "When a sailor adjusts his balance from riding on a boat for a long time": "Sea Legs",
+    "This is what you become after you walk the plank": "Shark Bait",
+    "The ship is managed and clean, everything is under control": "Shipshape",
+    "Something like, “Holy Cow!” a surprised or shocked expression": "Shiver Me Timbers!",
+    "Another expression of surprise": "Sink Me!",
+    "A name or insult for someone you dislike": "Son of a Biscuit Eater",
+    "Pass a round of drinks out to the crew": "Splice the Mainbrace!",
+    "Telescope": "Spyglass",
+    "Tipsy or intoxicated, shaky footing": "Squiffy",
+    "Lower a ship’s flag to indicate surrender": "Strike Colors",
+    "Mop or clean the ship’s deck and floorboards": "Swab",
+    "Take a nap": "Take a Caulk",
+    "Sailor, crew member": "Tar",
+    "Whale sighting": "Thar She Blows!",
+    "Very drunk, intoxicated": "Three Sheets to the Wind",
+    "Prisoner is ordered to walk off the board overlapping the ocean, which results in drowning and presumably a meet-up with Davy Jones Locker.": "Walk the Plank",
+    "An order to the crew to pull up the anchor and get this ship sailing!": "Weigh Anchor and Hoist the Mizzen!",
+    "A woman or peasant girl": "Wench",
+    "You": "Ye",
+    "When a ship flies a yellow flag, it indicates the presence of an ill crew member, such as yellow fever. But this was also a trick that smart pirates used to avoid becoming the target of another ship.": "Yellow Jack",
+    "A cheery expression to get someone’s attention":"Yo Ho Ho!",
+    "dude!":'mate'
+
+# Add more translations here
+}
+def translate_to_pirate(text):
+    translated_sentence = []
+    sentences = text.split(".")
+    for sentence in sentences:
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+
+        # Decide whether to insert "Arrr" at the end of the sentence
+        if random.choice([True, False]):
+            sentence += " Arrr"
+
+        words = sentence.split()
+        for i, word in enumerate(words):
+            # Check if the word should start with a capital letter
+            if word[0].isupper():
+                capitalized_word = pirate_dictionary.get(word.lower(), word)
+                capitalized_word = capitalized_word.capitalize()
+                words[i] = capitalized_word
+            else:
+                words[i] = pirate_dictionary.get(word.lower(), word)
+
+        translated_sentence.append(" ".join(words))
+
+    return ". ".join(translated_sentence)
+
+input_text = str(input(" Enter your words mate!: "))
+output_text = translate_to_pirate(input_text)
+print(output_text)
